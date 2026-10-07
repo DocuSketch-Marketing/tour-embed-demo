@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DocuSketch Embed Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --muted: #5c5c5c;
+    --line: #e4e4e4;
+    --accent: #f5e23c;
+    --code-bg: #f6f6f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    line-height: 1.5;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 28px; font-weight: 600; margin: 0 0 4px; }
+  h2 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
+  p.lede { color: var(--muted); margin: 0 0 32px; }
+  section { padding: 32px 0; border-top: 1px solid var(--line); }
+  .tag {
+    display: inline-block; font-size: 12px; font-weight: 500; letter-spacing: .02em;
+    background: var(--accent); color: var(--fg); padding: 2px 8px; border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  .note { color: var(--muted); font-size: 15px; margin: 0 0 20px; }
+  .embed-wrap { margin: 0 0 20px; }
+  details { margin-top: 12px; }
+  summary { cursor: pointer; font-weight: 500; }
+  pre {
+    background: var(--code-bg); border: 1px solid var(--line); border-radius: 6px;
+    padding: 14px; overflow-x: auto; font-family: "IBM Plex Mono", monospace; font-size: 13px;
+    line-height: 1.45; margin: 10px 0 0;
+  }
+  .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .two-up .label { font-size: 13px; font-weight: 500; color: var(--muted); margin: 0 0 6px; }
+  @media (max-width: 720px) { .two-up { grid-template-columns: 1fr; } }
+  .script-embed-box { max-width: 480px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>DocuSketch embed test</h1>
+  <p class="lede">Lobdell timeline project: pre-loss <code>KzySXm4D</code>, post-construction <code>nBn_UTAd</code>. Three ways to put a walkthrough on a page, each with the code used.</p>
+
+  <section>
+    <span class="tag">Option 1</span>
+    <h2>Preview strip embed (opens in a popup)</h2>
+    <p class="note">Lightweight animated preview of the first panorama. Clicking opens the full tour in a lightbox. Good for a gallery page with many projects. Loads jQuery and Colorbox from DocuSketch.</p>
+    <p class="note"><strong>Note:</strong> the snippet copied from the portal has <code>data-env="production"</code>. That value makes the script call <code>production.docusketch.com</code>, which does not resolve, so nothing renders. Use <code>data-env="app"</code> (or omit the attribute) until the snippet is fixed.</p>
+    <div class="embed-wrap script-embed-box">
+      <script type="text/javascript" src="https://app.docusketch.com/portal-cc/assets/javascripts/embedcode-utils.js" data-env="app"></script>
+      <a id="3239638" attr-publicID=KzySXm4D class="iframe embed-container" style="display: inline-block;"><canvas width="400" height="200"></canvas></a>
+    </div>
+    <details>
+      <summary>Code</summary>
+<pre>&lt;script type="text/javascript"
+  src="https://app.docusketch.com/portal-cc/assets/javascripts/embedcode-utils.js"
+  data-env="app"&gt;&lt;/script&gt;
+&lt;a id="3239638" attr-publicID=KzySXm4D class="iframe embed-container" style="display: inline-block;"&gt;
+  &lt;canvas width="400" height="200"&gt;&lt;/canvas&gt;
+&lt;/a&gt;</pre>
+    </details>
+  </section>
+
+  <section>
+    <span class="tag">Option 2</span>
+    <h2>Before and after, two players side by side</h2>
+    <p class="note">Two iframe embeds in a grid, one per timeline of the same project. Pre-loss is <code>KzySXm4D</code>, post-construction is <code>nBn_UTAd</code>.</p>
+    <div class="two-up">
+      <div>
+        <p class="label">Before (pre-loss)</p>
+        <div style="max-width: 100%; padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; ">
+          <iframe allowFullScreen frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%" src="https://app.docusketch.com/player/KzySXm4D"></iframe>
+        </div>
+      </div>
+      <div>
+        <p class="label">After (post-construction)</p>
+        <div style="max-width: 100%; padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; ">
+          <iframe allowFullScreen frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%" src="https://app.docusketch.com/player/nBn_UTAd"></iframe>
+        </div>
+      </div>
+    </div>
+    <details>
+      <summary>Code</summary>
+<pre>&lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;"&gt;
+  &lt;div&gt;
+    &lt;p&gt;Before&lt;/p&gt;
+    &lt;div style="padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden;"&gt;
+      &lt;iframe allowFullScreen frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+        src="https://app.docusketch.com/player/KzySXm4D"&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;p&gt;After&lt;/p&gt;
+    &lt;div style="padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden;"&gt;
+      &lt;iframe allowFullScreen frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+        src="https://app.docusketch.com/player/nBn_UTAd"&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+    </details>
+  </section>
+
+  <section>
+    <span class="tag">Option 3</span>
+    <h2>Before and after in one player (Timeline Compare Mode)</h2>
+    <p class="note">One iframe of a project that has timelines. The public player shows the timeline bar across the top (Pre Loss, Mitigation, Post Construction). The split-screen button beside it opens Compare Mode with Side by side, Split, and Sync. No custom layout needed, and it's the plain iframe embed.</p>
+    <div class="embed-wrap">
+      <div style="max-width: 100%; padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; ">
+        <iframe webkitAllowFullScreen mozallowfullscreen allowFullScreen frameborder="0" id="iframeTour-KzySXm4D" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%" src="https://app.docusketch.com/player/KzySXm4D"></iframe>
+      </div>
+    </div>
+    <details>
+      <summary>Code</summary>
+<pre>&lt;div style="max-width: 100%; padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; "&gt;
+  &lt;iframe webkitAllowFullScreen mozallowfullscreen allowFullScreen frameborder="0"
+    id="iframeTour-KzySXm4D"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+    src="https://app.docusketch.com/player/KzySXm4D"&gt;&lt;/iframe&gt;
+&lt;/div&gt;</pre>
+    </details>
+  </section>
+</main>
+</body>
+</html>
