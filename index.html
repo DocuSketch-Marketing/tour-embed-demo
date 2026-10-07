@@ -51,30 +51,10 @@
 <body>
 <main>
   <h1>DocuSketch embed test</h1>
-  <p class="lede">Lobdell timeline project: pre-loss <code>KzySXm4D</code>, post-construction <code>nBn_UTAd</code>. Three ways to put a walkthrough on a page, each with the code used.</p>
+  <p class="lede">Lobdell timeline project: pre-loss <code>KzySXm4D</code>, post-construction <code>nBn_UTAd</code>. Two ways to put a walkthrough on a page, each with the code used.</p>
 
   <section>
     <span class="tag">Option 1</span>
-    <h2>Preview strip embed (opens in a popup)</h2>
-    <p class="note">Lightweight animated preview of the first panorama. Clicking opens the full tour in a lightbox. Good for a gallery page with many projects. Loads jQuery and Colorbox from DocuSketch.</p>
-    <p class="note"><strong>Note:</strong> the snippet copied from the portal has <code>data-env="production"</code>. That value makes the script call <code>production.docusketch.com</code>, which does not resolve, so nothing renders. Use <code>data-env="app"</code> (or omit the attribute) until the snippet is fixed.</p>
-    <div class="embed-wrap script-embed-box">
-      <script type="text/javascript" src="https://app.docusketch.com/portal-cc/assets/javascripts/embedcode-utils.js" data-env="app"></script>
-      <a id="3239638" attr-publicID=KzySXm4D class="iframe embed-container" style="display: inline-block;"><canvas width="400" height="200"></canvas></a>
-    </div>
-    <details>
-      <summary>Code</summary>
-<pre>&lt;script type="text/javascript"
-  src="https://app.docusketch.com/portal-cc/assets/javascripts/embedcode-utils.js"
-  data-env="app"&gt;&lt;/script&gt;
-&lt;a id="3239638" attr-publicID=KzySXm4D class="iframe embed-container" style="display: inline-block;"&gt;
-  &lt;canvas width="400" height="200"&gt;&lt;/canvas&gt;
-&lt;/a&gt;</pre>
-    </details>
-  </section>
-
-  <section>
-    <span class="tag">Option 2</span>
     <h2>Before and after, two players side by side</h2>
     <p class="note">Two iframe embeds in a grid, one per timeline of the same project. Pre-loss is <code>KzySXm4D</code>, post-construction is <code>nBn_UTAd</code>.</p>
     <div class="two-up">
@@ -113,7 +93,7 @@
   </section>
 
   <section>
-    <span class="tag">Option 3</span>
+    <span class="tag">Option 2</span>
     <h2>Before and after in one player (Timeline Compare Mode)</h2>
     <p class="note">One iframe of a project that has timelines. The public player shows the timeline bar across the top (Pre Loss, Mitigation, Post Construction). The split-screen button beside it opens Compare Mode with Side by side, Split, and Sync. No custom layout needed, and it's the plain iframe embed.</p>
     <div class="embed-wrap">
